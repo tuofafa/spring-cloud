@@ -1,0 +1,27 @@
+server:
+  #端口号
+  port: 5001
+  #serverIP地址
+  address: 127.0.0.1
+spring:
+  application:
+    #应用名称
+    name: eureka-server
+eureka:
+  client:
+    #是否向注册中心注册自己
+    register-with-eureka: false
+    #是否不要检索服务
+    fetch-registry: false
+    service-url:
+      #eureka服务地址
+      #defaultZone: http://127.0.0.1:5001/eureka/
+      defaultZone:  http://${server.address}:${server.port}/eurela/
+
+  instance:
+    #实例名字
+    hostname: tuofafa
+    #实例ID
+    instance-id: ${server.address}:${server.port}
+    #使用IP地址定义主机名
+    prefer-ip-address: true
