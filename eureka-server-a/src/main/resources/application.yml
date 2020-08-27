@@ -1,5 +1,14 @@
 server:
-  port: 5002
+  port: 6001
+  address: 127.0.0.1
 spring:
   application:
-    name: eureka-server-a
+    name: eureka-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:5001/eureka/,http://127.0.0.1:6001/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: 127.0.0.1
